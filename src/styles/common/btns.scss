@@ -1,0 +1,55 @@
+@import "../default/variables.scss";
+
+.btn {
+  display: flex;
+  align-items: center;
+
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    display: block;
+    margin-left: 12px;
+    width: 12px;
+    height: 12px;
+
+    position: relative;
+    top: 1px;
+  }
+
+  &_white-outline {
+    border: 1px solid #d8d8d8;
+    color: #363636;
+    padding: 12px 33px;
+
+    border-radius: 25px;
+
+    svg {
+      fill: #363636;
+    }
+
+    @media (min-width: $md2 + px) {
+      &:hover {
+        background-color: #363636;
+
+        color: #d8d8d8;
+
+        svg {
+          fill: #d8d8d8;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #1a1a1a;
+    }
+  }
+}
