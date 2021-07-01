@@ -1,0 +1,28 @@
+.accomodation-details-page {
+  display: flex;
+  align-items: center;
+  flex: 1 1 100%;
+  min-height: 100%;
+
+  &__text {
+    display: block;
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 28px;
+    font-weight: 400;
+    color: #333;
+    line-height: 36px;
+
+    a {
+      display: block;
+
+      color: lightseagreen;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

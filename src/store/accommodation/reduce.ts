@@ -10,7 +10,7 @@ import {
 
 const initialState: AccomodationState = {
   accommodationList: [],
-  loading: false,
+  loading: true,
   error: "",
 };
 
