@@ -28,7 +28,8 @@ export const HomePage: FC = () => {
   }, [accommodationList.length, dispatch]);
 
   useEffect(() => {
-    modifiedItems();
+    modifieItems();
+    // eslint-disable-next-line
   }, [searchingValue, accommodationList]);
 
   const searchingInputHandler = (
@@ -37,7 +38,7 @@ export const HomePage: FC = () => {
     setSearchingValue(event.target.value);
   };
 
-  const modifiedItems = () => {
+  const modifieItems = () => {
     if (searchingValue.trim() === "" || searchingValue.length <= 2) {
       setVisibleAccommodationListsItems([]);
     } else {
@@ -49,7 +50,7 @@ export const HomePage: FC = () => {
 
   const handleSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    modifiedItems();
+    modifieItems();
   };
 
   return (
