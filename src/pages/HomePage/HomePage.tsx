@@ -28,6 +28,16 @@ export const HomePage: FC = () => {
   }, [accommodationList.length, dispatch]);
 
   useEffect(() => {
+    modifiedItems();
+  }, [searchingValue, accommodationList]);
+
+  const searchingInputHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setSearchingValue(event.target.value);
+  };
+
+  const modifiedItems = () => {
     if (searchingValue.trim() === "" || searchingValue.length <= 2) {
       setVisibleAccommodationListsItems([]);
     } else {
@@ -35,12 +45,11 @@ export const HomePage: FC = () => {
         filterBy(accommodationList, searchingValue)
       );
     }
-  }, [searchingValue, accommodationList]);
+  };
 
-  const searchingInputHandler = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setSearchingValue(event.target.value);
+  const handleSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    modifiedItems();
   };
 
   return (
@@ -54,7 +63,7 @@ export const HomePage: FC = () => {
         ) : (
           <>
             <div className="home-page__form">
-              <div className="form">
+              <form action="#" onSubmit={handleSubmitForm} className="form">
                 <div className="form__items">
                   <div className="form__item">
                     <label htmlFor="searching" className="form__label">
@@ -70,7 +79,7 @@ export const HomePage: FC = () => {
                     ></input>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
             <div className="home-page__content">
               {visibleAccommodationListsItems.length !== 0 ? (
